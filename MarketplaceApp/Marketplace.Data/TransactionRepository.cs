@@ -1,12 +1,15 @@
-﻿using System;
+﻿using Marketplace.Domain;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Marketplace.Data
 {
-    internal class TransactionRepository
+    public class TransactionRepository
     {
+        private readonly List<Transaction> _transactions = new();
+
+        public void AddTransaction(Transaction transaction) =>
+            _transactions.Add(transaction);
+
+        public List<Transaction> GetAllTransactions() => _transactions;
     }
 }

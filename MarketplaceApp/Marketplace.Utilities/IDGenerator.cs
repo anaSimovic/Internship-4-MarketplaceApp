@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Marketplace.Utilities
+﻿namespace Marketplace.Utilities
 {
-    internal class IDGenerator
+    public static class IDGenerator
     {
+        private static int _currentId = 0;
+
+        public static int GenerateId() => ++_currentId;
     }
 }
