@@ -1,12 +1,16 @@
-﻿using System;
+﻿using Marketplace.Domain;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Marketplace.Data
 {
-    internal class UserRepository
+    public class UserRepository
     {
+        private readonly List<User> _users = new();
+
+        public void AddUser(User user) => _users.Add(user);
+
+        public User? GetUserByEmail(string email) =>
+            _users.FirstOrDefault(u => u.Email == email);
     }
 }

@@ -1,12 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Marketplace.Domain
+﻿namespace Marketplace.Domain
 {
-    internal class Transaction
+    public class Transaction
     {
+        public int ProductId { get; set; }
+        public Buyer Buyer { get; set; }
+        public Seller Seller { get; set; }
+        public DateTime TransactionDate { get; set; }
+        public decimal Amount { get; set; }
+
+        public Transaction(int productId, Buyer buyer, Seller seller, decimal amount)
+        {
+            ProductId = productId;
+            Buyer = buyer;
+            Seller = seller;
+            Amount = amount;
+            TransactionDate = DateTime.Now;
+        }
     }
 }
